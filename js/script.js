@@ -17,7 +17,7 @@ rub.addEventListener('input' , () => {
 	
 	//open - собирает настройки
 	//request.open(method, URL, async, user, password)
-	request.open('GET', 'js/curren1t.json');
+	request.open('GET', 'js/current.json');
 
 	//http заголовки для передачи джейсон файлов
 	request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -48,3 +48,27 @@ rub.addEventListener('input' , () => {
 	});
 
 });
+
+
+//Промисы
+const hello = new Promise((resolve, reject) => {
+		console.log('запстилось hello');
+		resolve();
+		reject();
+		
+});
+
+    hello.then(() => {
+    	console.log('я обещал');
+
+    });
+
+    hello.catch(() => {
+    	console.log('я не обещал');
+    });
+
+ //fetch() https://jsonplaceholder.typicode.com/
+
+ fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
